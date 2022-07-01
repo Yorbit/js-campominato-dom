@@ -1,3 +1,4 @@
+
 let positionBomb = [];
 
 let endGame;
@@ -10,6 +11,8 @@ let userPoints = 1;
 
 
 btnStart.addEventListener('click', function (event) {
+
+    let userPoints = 1;
 
     event.target.innerText = 'Try Again';
 
@@ -41,6 +44,8 @@ btnStart.addEventListener('click', function (event) {
         parentGrid.append(newCell);
 
         newCell.addEventListener('click', function () {
+
+            console.log(index);
 
             if (newCell.classList.contains('active')) {
                 alert('HAI GIA SELEZIONATO')
