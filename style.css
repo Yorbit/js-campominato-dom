@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-start {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#btn-start-game {
+    width: 250px;
+    cursor: pointer;
+    font-size: 30px;
+    background-color: blue;
+    height: 60px;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: greenyellow;
+    height: 1000px;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    border: 1px solid black;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    background-color: orange;
+    font-size: 30px;
+    border: 1px solid black;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.active {
+    cursor: pointer;
+    background-color: lightskyblue;
+}
