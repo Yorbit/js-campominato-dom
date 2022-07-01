@@ -2,7 +2,12 @@ let positionBomb = [];
 
 let endGame;
 
-const btnStart = document.getElementById('btn-start-game')
+const btnStart = document.getElementById('btn-start-game');
+
+const userPointsNum = document.getElementById("user-points-num");
+
+let userPoints = 1;
+
 
 
 btnStart.addEventListener('click', function () {
@@ -26,6 +31,7 @@ btnStart.addEventListener('click', function () {
         console.log(positionBomb);
     }
 
+    let winGame = ((100) - (16));
 
     for (let index = 0; index < 100; index++) {
 
@@ -34,6 +40,14 @@ btnStart.addEventListener('click', function () {
         parentGrid.append(newCell);
 
         newCell.addEventListener('click', function () {
+
+            newCell.classList.toggle('active');
+
+            userPointsNum.innerText = `Punti: ${userPoints}`;
+
+            userPointsNum.innerHTML = `Punti: ${userPoints}`;
+
+            Points = userPoints++;
 
             if (positionBomb.includes(index + 1)) {
 
@@ -85,6 +99,18 @@ function bombGen(bombNumberPosition, min, max) {
 
     let randomBomb;
 
-    let validBomb = false;
+    let okBomb = false;
 
+    while (okBomb === false) {
+
+        randomBomb = (Math.floor(Math.random() * max) + min);
+
+        if (!bombNumberPosition.includes(randomBomb)) {
+
+            okBomb = true;
+
+        }
+    }
+
+    return randomBomb;
 }
