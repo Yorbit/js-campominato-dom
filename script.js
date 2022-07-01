@@ -1,13 +1,30 @@
+let positionBomb = [];
+
+let endGame;
+
 const btnStart = document.getElementById('btn-start-game')
 
 
 btnStart.addEventListener('click', function () {
+
+    endGame = false;
 
     document.getElementById("btn-start-game").disabled = true;
 
     const parentGrid = document.getElementById("grid-game");
 
     parentGrid.classList.add('grid-container')
+
+    positionBomb = [];
+
+    for (let index = 0; index <= 16; index++) {
+
+        const bombAlone = bombGen(positionBomb, 1, 100);
+
+        positionBomb.push(bombAlone);
+
+        console.log(positionBomb);
+    }
 
     for (let index = 0; index < 100; index++) {
 
