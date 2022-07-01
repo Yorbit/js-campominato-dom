@@ -19,6 +19,12 @@
     font-weight: bold;
     color: white;
     border-radius: 10px;
+    margin-right: 30px;
+}
+
+#selector {
+    margin-right: 30px;
+    border-radius: 10px;
 }
 
 .grid-container {
@@ -52,5 +58,16 @@
 
 .active {
     cursor: pointer;
-    background-color: lightskyblue;
+    background-color: dodgerblue;
+    cursor: not-allowed;
+}
+
+.cell.Media {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.cell.Difficile {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }

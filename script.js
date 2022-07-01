@@ -9,8 +9,9 @@ const userPointsNum = document.getElementById("user-points-num");
 let userPoints = 1;
 
 
+btnStart.addEventListener('click', function (event) {
 
-btnStart.addEventListener('click', function () {
+    event.target.innerText = 'Try Again';
 
     endGame = false;
 
@@ -41,6 +42,11 @@ btnStart.addEventListener('click', function () {
 
         newCell.addEventListener('click', function () {
 
+            if (newCell.classList.contains('active')) {
+                alert('HAI GIA SELEZIONATO')
+                return;
+            }
+
             newCell.classList.toggle('active');
 
             userPointsNum.innerText = `Punti: ${userPoints}`;
@@ -57,11 +63,11 @@ btnStart.addEventListener('click', function () {
 
                 if (endGame == true) {
 
+                    alert('GAME OVER!! Premi Try Again per Riprovare');
+
                     parentGrid.innerHTML = null;
 
                     parentGrid.classList.remove('container-start');
-
-                    alert('GAME OVER!! Premi Play Game per Riprovare');
 
                     document.getElementById("btn-start-game").disabled = false;
                 }
