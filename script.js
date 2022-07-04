@@ -9,6 +9,32 @@ const userPointsNum = document.getElementById("user-points-num");
 
 let userPoints = 1;
 
+function createNewCell() {
+    const cell = document.createElement('div');
+
+    cell.classList.add('cell');
+
+    return cell;
+}
+
+function bombGen(bombNumberPosition, min, max) {
+
+    let randomBomb;
+
+    let okBomb = false;
+
+    while (okBomb === false) {
+
+        randomBomb = (Math.floor(Math.random() * max) + min);
+
+        if (!bombNumberPosition.includes(randomBomb)) {
+
+            okBomb = true;
+        }
+    }
+
+    return randomBomb;
+}
 
 btnStart.addEventListener('click', function (event) {
 
@@ -62,7 +88,9 @@ btnStart.addEventListener('click', function (event) {
 
             if (positionBomb.includes(index + 1)) {
 
-                newCell.classList.add('bomb-hit');
+                newCell.classList.add('bomb');
+
+                alert('Hai Colpito Una Bomba');
 
                 endGame = true;
 
@@ -97,31 +125,3 @@ btnStart.addEventListener('click', function (event) {
         })
     }
 })
-
-function createNewCell() {
-    const cell = document.createElement('div');
-
-    cell.classList.add('cell');
-
-    return cell;
-}
-
-function bombGen(bombNumberPosition, min, max) {
-
-    let randomBomb;
-
-    let okBomb = false;
-
-    while (okBomb === false) {
-
-        randomBomb = (Math.floor(Math.random() * max) + min);
-
-        if (!bombNumberPosition.includes(randomBomb)) {
-
-            okBomb = true;
-
-        }
-    }
-
-    return randomBomb;
-}

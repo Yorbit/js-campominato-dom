@@ -51,7 +51,7 @@
     height: calc(100% / 10);
 }
 
-.bomb-hit {
+.bomb {
     cursor: pointer;
     background-color: red;
 }
