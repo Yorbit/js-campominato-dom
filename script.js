@@ -90,13 +90,11 @@ btnStart.addEventListener('click', function (event) {
 
                 newCell.classList.add('bomb');
 
-                alert('Hai Colpito Una Bomba');
-
                 endGame = true;
 
                 if (endGame == true) {
 
-                    alert('GAME OVER!! Premi Try Again per Riprovare');
+                    alert('HAI COLPITO UNA BOMBA -GAME OVER-!! Premi Try Again per Riprovare');
 
                     parentGrid.innerHTML = null;
 
@@ -104,24 +102,24 @@ btnStart.addEventListener('click', function (event) {
 
                     document.getElementById("btn-start-game").disabled = false;
                 }
-            }
 
-            else {
+                else {
 
-                newCell.classList.add('on');
+                    newCell.classList.add('on');
 
-                let counter = document.querySelectorAll(".on").length;
+                    let counter = document.querySelectorAll(".on").length;
 
-                if (counter == winGame) {
+                    if (counter == winGame) {
 
-                    alert('VITTORIA!! Premi Play Game per giocare ancora')
+                        alert('VITTORIA!! Premi Play Game per giocare ancora')
 
-                    parentGrid.innerHTML = null;
+                        parentGrid.innerHTML = null;
 
-                    document.getElementById("btn-start-game").disabled = false;
+                        document.getElementById("btn-start-game").disabled = false;
+                    }
                 }
-            }
 
+            }
         })
     }
 })
