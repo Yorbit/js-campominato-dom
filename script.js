@@ -48,6 +48,7 @@ btnStart.addEventListener('click', function (event) {
 
     const parentGrid = document.getElementById("grid-game");
 
+
     parentGrid.classList.add('grid-container')
 
     positionBomb = [];
@@ -58,8 +59,9 @@ btnStart.addEventListener('click', function (event) {
 
         positionBomb.push(bombAlone);
 
-        console.log(positionBomb);
+        //console.log(positionBomb);
     }
+    console.log(positionBomb);
 
     let winGame = ((100) - (16));
 
@@ -71,22 +73,18 @@ btnStart.addEventListener('click', function (event) {
 
         newCell.addEventListener('click', function () {
 
-            console.log(index);
+            //console.log(index);
 
             if (newCell.classList.contains('active')) {
                 alert('HAI GIA SELEZIONATO')
                 return;
             }
 
-            newCell.classList.toggle('active');
+            console.log(index + 1);
 
-            userPointsNum.innerText = `Punti: ${userPoints}`;
+            let checkBomb = index + 1;
 
-            userPointsNum.innerHTML = `Punti: ${userPoints}`;
-
-            Points = userPoints++;
-
-            if (positionBomb.includes(index + 1)) {
+            if (positionBomb.includes(checkBomb)) {
 
                 newCell.classList.add('bomb');
 
@@ -95,8 +93,6 @@ btnStart.addEventListener('click', function (event) {
                 if (endGame == true) {
 
                     alert('HAI COLPITO UNA BOMBA -GAME OVER-!! Premi Try Again per Riprovare');
-
-                    parentGrid.innerHTML = null;
 
                     parentGrid.classList.remove('container-start');
 
@@ -118,7 +114,15 @@ btnStart.addEventListener('click', function (event) {
                         document.getElementById("btn-start-game").disabled = false;
                     }
                 }
+            }
+            else {
+                newCell.classList.toggle('active');
 
+                userPointsNum.innerText = `Punti: ${userPoints}`;
+
+                userPointsNum.innerHTML = `Punti: ${userPoints}`;
+
+                Points = userPoints++;
             }
         })
     }

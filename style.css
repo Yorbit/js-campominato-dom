@@ -54,6 +54,7 @@
 .bomb {
     cursor: pointer;
     background-color: red;
+    cursor: not-allowed;
 }
 
 .active {
